@@ -29,6 +29,7 @@ import org.eclipse.core.internal.runtime.InternalPlatform;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
+import fr.imag.adele.melusine.as.findmodel.CheckModel;
 import fr.imag.adele.melusine.as.findmodel.IFindModel;
 import fr.imag.adele.melusine.as.findmodel.ModelEntry;
 
@@ -142,22 +143,19 @@ public class EclipseFindModel implements IFindModel {
 			models[i] = new BundleModelEntry(bundles[i], domainName, bundles[i].getSymbolicName());
 		}
 		return models;
-		// IExtensionRegistry registry = Platform.getExtensionRegistry();
-		// IExtensionPoint point = registry.getExtensionPoint(NAME_SPACE,
-		// MODEL_DEFINITION);
-		// List<ModelEntry> ret = new ArrayList<ModelEntry>();
-		// if (point == null)
-		// return null;
-		// IConfigurationElement[] extensions =
-		// point.getConfigurationElements();
-		// for (int i = 0; i < extensions.length; i++) {
-		// IConfigurationElement ce = extensions[i];
-		// if (ce.getName().equals("model") &&
-		// domainName.equals(ce.getAttribute("domain"))){
-		// ret.add(new ConfigurationModelEntry(ce));
-		// }
-		// }
-		// return (ModelEntry[]) ret.toArray(new ModelEntry[ret.size()]);
+	}
+	
+	public ModelEntry[] findModelEntries(String domainName, CheckModel check) {
+		BundleContext cxt = InternalPlatform.getDefault().getBundleContext();
+		Bundle[] b = cxt.getBundles();
+		List<BundleModelEntry> ret = new ArrayList<BundleModelEntry>();
+		for (Bundle bundle : b) {
+			BundleModelEntry e = new BundleModelEntry(bundle, domainName, bundle.getSymbolicName());
+			if (check.check(e)) {
+				ret.add(e);
+			}
+		}
+		return ret.toArray(new BundleModelEntry[ret.size()]);
 	}
 
 	public ModelEntry findModelEntry(String domainName) {
