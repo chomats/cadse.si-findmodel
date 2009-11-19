@@ -11,7 +11,6 @@ Eclipse-LazyStart: false
 Export-Package: fr.imag.adele.melusine.si.eclipsefindmodel;version="2.2.1"
 Import-Package: fr.imag.adele.melusine.as.findmodel,
  fr.imag.adele.melusine.si.eclipsefindmodel;version="2.2.1",
- fr.imag.adele.packageinfo;version="1.0.0",
  org.apache.felix.ipojo;version="1.2.0",
  org.apache.felix.ipojo.architecture;version="1.2.0",
  org.eclipse.core.internal.runtime,
