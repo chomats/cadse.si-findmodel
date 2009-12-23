@@ -9,7 +9,7 @@ Created-By: Apache Maven Bundle Plugin
 Bundle-Vendor: Adele/LIG/ Grenoble University, France
 Build-Jdk: 1.6.0_17
 Bundle-Version: 2.3.0.SNAPSHOT
-Bnd-LastModified: 1261575241423
+Bnd-LastModified: 1261581193570
 Bundle-ManifestVersion: 2
 Bundle-Description: Cadse Find Model
 Import-Package: fr.imag.adele.melusine.as.findmodel,fr.imag.adele.melu
