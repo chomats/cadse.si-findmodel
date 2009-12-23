@@ -62,5 +62,15 @@
             <artifactId>as.findmodel</artifactId>
             <version>${project.version}</version>
         </dependency>
+    	<dependency>
+    		<groupId>org.eclipse</groupId>
+    		<artifactId>osgi</artifactId>
+    		<version>3.5.0.v20090520</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>org.eclipse</groupId>
+    		<artifactId>org.eclipse.core.runtime</artifactId>
+    		<version>3.5.0.v20090525</version>
+    	</dependency>
     </dependencies>
 </project>
