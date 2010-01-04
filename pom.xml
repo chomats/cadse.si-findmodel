@@ -8,59 +8,22 @@
 	<version>2.3.0-SNAPSHOT</version>
 	<description>Cadse Find Model</description>
 	<parent>
-		<artifactId>fr.imag.adele.cadse</artifactId>
+		<artifactId>fr.imag.adele.cadse.parent.ipojo</artifactId>
 		<groupId>fr.imag.adele.cadse</groupId>
 		<version>2.3.0-SNAPSHOT</version>
-		<relativePath>../fr.imag.adele.cadse.parent</relativePath>
+		<relativePath>../fr.imag.adele.cadse.parent.ipojo</relativePath>
 	</parent>
-	<organization>
-		<name>Adele/LIG/ Grenoble University, France</name>
-		<url>http://www-adele.imag.fr/</url>
-	</organization>
 	<build>
 		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
 				<extensions>true</extensions>
 				<configuration>
-					<manifestLocation>META-INF</manifestLocation>
-                    <instructions>
-						<Bundle-SymbolicName>${pom.name};singleton:=true</Bundle-SymbolicName>
-						<Bundle-Name>${pom.name}</Bundle-Name>
-						<Bundle-Description>${pom.description}</Bundle-Description>
+					<instructions>
 						<Export-Package>fr.imag.adele.melusine.si.eclipsefindmodel*</Export-Package>
-						<Private-Package></Private-Package>
-						<!--
-							Include-Resource> META-INF/LICENSE=LICENSE,
-							plugin.xml=plugin.xml, plugin.properties=plugin.properties
-							</Include-Resource>
-						-->
-						<Ipojo-auto-start>true</Ipojo-auto-start>
-                       	<_removeheaders>Bnd-LastModified</_removeheaders>
 					</instructions>
 				</configuration>
-			</plugin>
-			
-			<!-- iPOJO Maven Plugin Configuration : nothing to do -->
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-ipojo-plugin</artifactId>
-				<version>1.4.0</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>ipojo-bundle</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -68,17 +31,14 @@
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>as.findmodel</artifactId>
-			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse</groupId>
 			<artifactId>org.eclipse.osgi</artifactId>
-			<version>${version.osgi.core}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse</groupId>
 			<artifactId>org.eclipse.core.runtime</artifactId>
-			<version>${version.osgi.runtime}</version>
 		</dependency>
 	</dependencies>
 </project>
