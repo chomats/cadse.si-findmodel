@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipojo>
+	<component immediate="false" classname="fr.imag.adele.melusine.si.eclipsefindmodel.EclipseFindModel" factory="fr.imag.adele.melusine.si.eclipsefindmodel.EclipseFindModel" architecture="true">
+		<provides specification="fr.imag.adele.melusine.as.findmodel.IFindModel"/>
+	</component>
+	<instance component="fr.imag.adele.melusine.si.eclipsefindmodel.EclipseFindModel" name="fr.imag.adele.cadse.si.melusine.eclipsefindmodel.instance"/>
+</ipojo>
