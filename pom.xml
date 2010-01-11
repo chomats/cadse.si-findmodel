@@ -22,6 +22,7 @@
 				<configuration>
 					<instructions>
 						<Export-Package>fr.imag.adele.melusine.si.eclipsefindmodel*</Export-Package>
+						<Import-Package>org.eclipse.core.internal.runtime;common=!, *</Import-Package>
 					</instructions>
 				</configuration>
 			</plugin>
