@@ -1,0 +1,66 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.imag.adele.cadse.si.melusine.eclipsefindmodel
+Bundle-SymbolicName: fr.imag.adele.cadse.si.melusine.eclipsefindmodel;singleton:=true
+Bundle-Vendor: Adele/LIG/ Grenoble University
+Bundle-Version: 2.2.1.qualifier
+Bundle-Localization: plugin
+Bundle-ClassPath: .
+Bundle-Description: Bundle fr.imag.adele.cadse.si.melusine.eclipsefindmodel
+Eclipse-LazyStart: false
+Export-Package: fr.imag.adele.melusine.si.eclipsefindmodel;version="2.2.1"
+Import-Package: fr.imag.adele.melusine.as.findmodel,
+ fr.imag.adele.melusine.si.eclipsefindmodel;version="2.2.1",
+ org.apache.felix.ipojo;version="1.2.0",
+ org.apache.felix.ipojo.architecture;version="1.2.0",
+ org.eclipse.core.internal.runtime,
+ org.osgi.framework;version="1.4.0",
+ org.osgi.service.cm;version="1.2",
+ org.osgi.service.log;version="1.3"
+Created-By: envsam & iPOJO
+iPOJO-Components: component { $immediate="false" $classname="fr.imag.ad
+ ele.melusine.si.eclipsefindmodel.EclipseFindModel" $factory="fr.imag.a
+ dele.melusine.si.eclipsefindmodel.EclipseFindModel" $architecture="tru
+ e" provides { $specification="fr.imag.adele.melusine.as.findmodel.IFin
+ dModel" }manipulation { field { $name="__MfindQualifiedModel$java_lang
+ _String$java_lang_String" $type="boolean" }field { $name="__MfindBundl
+ eModels$java_lang_String" $type="boolean" }field { $name="__MfindModel
+ Entry$java_lang_String" $type="boolean" }field { $name="__MfindBundleM
+ odelEqual$java_lang_String" $type="boolean" }field { $name="__MfindBun
+ dleModel$java_lang_String" $type="boolean" }field { $name="__MfindMode
+ lEntries$java_lang_String$fr_imag_adele_melusine_as_findmodel_CheckMod
+ el" $type="boolean" }field { $name="__IM" $type="org.apache.felix.ipoj
+ o.InstanceManager" }field { $name="__MfindModelEntries$java_lang_Strin
+ g" $type="boolean" }method { $name="$init" }method { $arguments="{org.
+ apache.felix.ipojo.InstanceManager}" $name="$init" }method { $argument
+ s="{java.lang.String,java.lang.String}" $name="findQualifiedModel" $re
+ turn="fr.imag.adele.melusine.as.findmodel.ModelEntry" }method { $argum
+ ents="{java.lang.String,java.lang.String}" $name="__findQualifiedModel
+ " $return="fr.imag.adele.melusine.as.findmodel.ModelEntry" }method { $
+ arguments="{java.lang.String}" $name="findModelEntries" $return="fr.im
+ ag.adele.melusine.as.findmodel.ModelEntry[]" }method { $arguments="{ja
+ va.lang.String}" $name="__findModelEntries" $return="fr.imag.adele.mel
+ usine.as.findmodel.ModelEntry[]" }method { $arguments="{java.lang.Stri
+ ng,fr.imag.adele.melusine.as.findmodel.CheckModel}" $name="findModelEn
+ tries" $return="fr.imag.adele.melusine.as.findmodel.ModelEntry[]" }met
+ hod { $arguments="{java.lang.String,fr.imag.adele.melusine.as.findmode
+ l.CheckModel}" $name="__findModelEntries" $return="fr.imag.adele.melus
+ ine.as.findmodel.ModelEntry[]" }method { $arguments="{java.lang.String
+ }" $name="findModelEntry" $return="fr.imag.adele.melusine.as.findmodel
+ .ModelEntry" }method { $arguments="{java.lang.String}" $name="__findMo
+ delEntry" $return="fr.imag.adele.melusine.as.findmodel.ModelEntry" }me
+ thod { $arguments="{java.lang.String}" $name="findBundleModels" $retur
+ n="org.osgi.framework.Bundle[]" }method { $arguments="{java.lang.Strin
+ g}" $name="__findBundleModels" $return="org.osgi.framework.Bundle[]" }
+ method { $arguments="{java.lang.String}" $name="findBundleModel" $retu
+ rn="org.osgi.framework.Bundle" }method { $arguments="{java.lang.String
+ }" $name="__findBundleModel" $return="org.osgi.framework.Bundle" }meth
+ od { $arguments="{java.lang.String}" $name="findBundleModelEqual" $ret
+ urn="org.osgi.framework.Bundle" }method { $arguments="{java.lang.Strin
+ g}" $name="__findBundleModelEqual" $return="org.osgi.framework.Bundle"
+  }interface { $name="fr.imag.adele.melusine.as.findmodel.IFindModel" }
+ }}instance { $component="fr.imag.adele.melusine.si.eclipsefindmodel.Ec
+ lipseFindModel" $name="fr.imag.adele.cadse.si.melusine.eclipsefindmode
+ l.instance" }
+ipojo-auto-start: true
+
