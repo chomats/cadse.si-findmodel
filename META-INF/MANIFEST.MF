@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Export-Package: fr.imag.adele.melusine.si.eclipsefindmodel;uses:="fr.i
+ mag.adele.melusine.as.findmodel,org.osgi.framework,org.eclipse.core.i
+ nternal.runtime"
+Built-By: chomats
+Tool: Bnd-0.0.357
+Bundle-Name: fr.imag.adele.cadse.si.eclipsefindmodel
+Created-By: Apache Maven Bundle Plugin
+Bundle-Vendor: Adele/LIG/ Grenoble University, France
+Build-Jdk: 1.6.0_17
+Bundle-Version: 2.3.0.SNAPSHOT
+Ipojo-auto-start: true
+Bundle-ManifestVersion: 2
+Bundle-Description: Cadse Find Model
+Import-Package: fr.imag.adele.melusine.as.findmodel;version="2.3",fr.i
+ mag.adele.melusine.si.eclipsefindmodel,org.eclipse.core.internal.runt
+ ime,org.osgi.framework;version="1.5"
+Bundle-SymbolicName: fr.imag.adele.cadse.si.eclipsefindmodel;singleton
+ :=true
+Bundle-DocURL: http://www-adele.imag.fr/
+
