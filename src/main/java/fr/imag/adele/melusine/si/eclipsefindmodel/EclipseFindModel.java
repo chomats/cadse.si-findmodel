@@ -158,14 +158,6 @@ public class EclipseFindModel implements IFindModel {
 		return ret.toArray(new BundleModelEntry[ret.size()]);
 	}
 
-	public ModelEntry findModelEntry(String domainName) {
-		Bundle bundle = findBundleModel(MODEL_PREFIX + domainName + ".");
-		if (bundle == null) {
-			return null;
-		}
-		return new BundleModelEntry(bundle, domainName, bundle.getSymbolicName());
-	}
-
 	/**
 	 * find the list of the model for the domain domainName.
 	 * 
