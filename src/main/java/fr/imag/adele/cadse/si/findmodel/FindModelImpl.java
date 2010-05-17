@@ -35,7 +35,7 @@ import fr.imag.adele.melusine.as.findmodel.ModelEntry;
 /**
  * @generated
  */
-public class EclipseFindModel implements IFindModel {
+public class FindModelImpl implements IFindModel {
 
 	public static final String	MODEL_PREFIX	= "Model.";
 
@@ -129,7 +129,7 @@ public class EclipseFindModel implements IFindModel {
 
 	private BundleContext _cxt;
 	
-	public EclipseFindModel(BundleContext cxt) {
+	public FindModelImpl(BundleContext cxt) {
 		_cxt = cxt;
 	}
 
