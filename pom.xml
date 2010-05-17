@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>fr.imag.adele.cadse</groupId>
-	<artifactId>si.eclipsefindmodel</artifactId>
-	<name>fr.imag.adele.cadse.si.eclipsefindmodel</name>
+	<artifactId>si.findmodel</artifactId>
+	<name>fr.imag.adele.cadse.si.findmodel</name>
 	<packaging>bundle</packaging>
 	<version>2.3.0-SNAPSHOT</version>
 	<description>Cadse Find Model</description>
@@ -21,8 +21,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Export-Package>fr.imag.adele.melusine.si.eclipsefindmodel*</Export-Package>
-						<Import-Package>org.eclipse.core.internal.runtime;common=!, *</Import-Package>
+						<Export-Package>fr.imag.adele.cadse.si.findmodel*</Export-Package>
 					</instructions>
 				</configuration>
 			</plugin>
@@ -34,12 +33,8 @@
 			<artifactId>as.findmodel</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse</groupId>
-			<artifactId>org.eclipse.osgi</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse</groupId>
-			<artifactId>org.eclipse.core.runtime</artifactId>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
 		</dependency>
 	</dependencies>
 </project>
