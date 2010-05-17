@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package fr.imag.adele.melusine.si.eclipsefindmodel;
+package fr.imag.adele.cadse.si.findmodel;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-import org.eclipse.core.internal.runtime.InternalPlatform;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
@@ -128,6 +127,12 @@ public class EclipseFindModel implements IFindModel {
 
 	}
 
+	private BundleContext _cxt;
+	
+	public EclipseFindModel(BundleContext cxt) {
+		_cxt = cxt;
+	}
+
 	public ModelEntry findQualifiedModel(String domainName, String qualifiedModelName) {
 		Bundle bundle = findBundleModelEqual(qualifiedModelName);
 		if (bundle == null) {
@@ -146,8 +151,7 @@ public class EclipseFindModel implements IFindModel {
 	}
 	
 	public ModelEntry[] findModelEntries(String domainName, CheckModel check) {
-		BundleContext cxt = InternalPlatform.getDefault().getBundleContext();
-		Bundle[] b = cxt.getBundles();
+		Bundle[] b = _cxt.getBundles();
 		List<BundleModelEntry> ret = new ArrayList<BundleModelEntry>();
 		for (Bundle bundle : b) {
 			BundleModelEntry e = new BundleModelEntry(bundle, domainName, bundle.getSymbolicName());
@@ -168,8 +172,7 @@ public class EclipseFindModel implements IFindModel {
 	 *                Model not found")
 	 */
 	private Bundle[] findBundleModels(String prefix) {
-		BundleContext cxt = InternalPlatform.getDefault().getBundleContext();
-		Bundle[] b = cxt.getBundles();
+		Bundle[] b = _cxt.getBundles();
 		List<Bundle> ret = new ArrayList<Bundle>();
 		for (Bundle bundle : b) {
 			if (bundle.getSymbolicName().startsWith(prefix)) {
@@ -179,20 +182,8 @@ public class EclipseFindModel implements IFindModel {
 		return ret.toArray(new Bundle[ret.size()]);
 	}
 
-	private Bundle findBundleModel(String prefix) {
-		BundleContext cxt = InternalPlatform.getDefault().getBundleContext();
-		Bundle[] b = cxt.getBundles();
-		for (Bundle bundle : b) {
-			if (bundle.getSymbolicName().startsWith(prefix)) {
-				return bundle;
-			}
-		}
-		return null;
-	}
-
 	private Bundle findBundleModelEqual(String prefix) {
-		BundleContext cxt = InternalPlatform.getDefault().getBundleContext();
-		Bundle[] b = cxt.getBundles();
+		Bundle[] b = _cxt.getBundles();
 		for (Bundle bundle : b) {
 			if (bundle.getSymbolicName().equals(prefix)) {
 				return bundle;
